@@ -1,0 +1,6 @@
+{# macro conditional to test strings against segment #}
+{% macro segmentConditional(segmentNumber, string, code) %}
+    {% if craft.request.getSegment(segmentNumber) == string %}
+        {{ include(template_from_string(code)) }}
+    {% endif %}
+{% endmacro %}
